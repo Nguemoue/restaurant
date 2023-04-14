@@ -13,9 +13,6 @@ class HomeController extends Controller
     }
     public function __invoke()
     {
-        dd(File::glob(resource_path("views/\^i\.blade.php")));
-        $result = Cache::add("users",File::g,now()->addDay());
-        dd($result);
         return view("index");
     }
 }

@@ -22,3 +22,15 @@
 			return null;
 		}
 	}
+
+	if(!function_exists("adminUrl")){
+		function adminUrl(){
+			return config("url.admin");
+		}
+	}
+
+	if(!function_exists("superAdminUrl")){
+		function superAdminUrl(){
+			return config("url.superAdmin");
+		}
+	}

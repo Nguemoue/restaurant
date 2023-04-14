@@ -1,86 +1,69 @@
-<footer id="footer" class="footer bg-overlay">
-    <div class="footer-main">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-4 col-md-6 footer-widget footer-about">
-                    <h3 class="widget-title">About Us</h3>
-                    <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-                        labore et dolore magna aliqua.</p>
-                    <div class="footer-social">
-                        <ul>
-                            <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
-                                            class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
-                                            class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
-                        </ul>
-                    </div><!-- Footer social end -->
-                </div><!-- Col end -->
-
-                <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                    <h3 class="widget-title">Working Hours</h3>
-                    <div class="working-hours">
-                        We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
-                        Hotline and Contact form.
-                        <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
-                        <br> Saturday: <span class="text-right">12:00 - 15:00</span>
-                        <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
-                    </div>
-                </div><!-- Col end -->
-
-                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                    <h3 class="widget-title">Services</h3>
-                    <ul class="list-arrow">
-                        <li><a href="service-single.html">Pre-Construction</a></li>
-                        <li><a href="service-single.html">General Contracting</a></li>
-                        <li><a href="service-single.html">Construction Management</a></li>
-                        <li><a href="service-single.html">Design and Build</a></li>
-                        <li><a href="service-single.html">Self-Perform Construction</a></li>
-                    </ul>
-                </div><!-- Col end -->
-            </div><!-- Row end -->
-        </div><!-- Container end -->
-    </div><!-- Footer main end -->
-
-    <div class="copyright">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <div class="copyright-info text-center">
-              <span>Copyright &copy; <script>
-                  document.write(new Date().getFullYear())
-                </script>, Designed &amp; Developed by <a href="https://themefisher.com">Themefisher</a></span>
+<footer>
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                    <a class="btn btn-link" href="{{route('about')}}">About Us</a>
+                    <a class="btn btn-link" href="{{route('contact')}}">Contact Us</a>
+                    <a class="btn btn-link" href="{{route('booking')}}">Reservation</a>
+                    <a class="btn btn-link" href="{{route('privacy')}}">Privacy Policy</a>
+                    <a class="btn btn-link" href="{{route('terms')}}">Terms & Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Gousso , Yaounde,Cameroun </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 698 04 30 44</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>lucchuala@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
-                <div class="col-md-12">
-                    <div class="copyright-info text-center">
-                        <span>Distributed by <a href="https://themewagon.com/">Themewagon</a></span>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                    <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                    <p>09AM - 09PM</p>
+                    <h5 class="text-light fw-normal">Sunday</h5>
+                    <p>10AM - 08PM</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
-
-                <div class="col-md-12">
-                    <div class="footer-menu text-center">
-                        <ul class="list-unstyled mb-0">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="team.html">Our people</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="news-left-sidebar.html">Blog</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- Row end -->
-
-            <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-                <button class="btn btn-primary" title="Back to Top">
-                    <i class="fa fa-angle-double-up"></i>
-                </button>
             </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Restaurant </a>, All Right Reserved.
 
-        </div><!-- Container end -->
-    </div><!-- Copyright end -->
-</footer><!-- Footer end -->
+                        Designed By <a class="border-bottom" href="#!">Nguemoue Luc</a><br><br>
+                        Distributed By <a class="border-bottom" href="#!"
+                            target="_blank">SIMAGRO Sarl</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FAQS</a>
+                            <a class="btn btn-success btn-sm rounded px-2" href="{{route('login')}}">Se Connecter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
