@@ -3,8 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+
     }
 
     /**
@@ -25,12 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive("scanneur", function (User $user) {
-
-        });
-
-        Blade::directive("traiteur", function (User $user) {
-
-        });
+			\Illuminate\Support\Facades\View::share("devise",config("misc.devise"));
+			Paginator::useBootstrap();
     }
 }

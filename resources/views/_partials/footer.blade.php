@@ -54,11 +54,16 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
+                            <a data-toggle="tooltip" title="Acceuil" href="">Home</a>
                             <a href="">Cookies</a>
                             <a href="">Help</a>
                             <a href="">FAQS</a>
-                            <a class="btn btn-success btn-sm rounded px-2" href="{{route('login')}}">Se Connecter</a>
+									@guest("web")
+										<a class="btn btn-success btn-sm rounded px-2" href="{{route('login')}}"><i class="fa fa-user-alt"></i> Se Connecter</a>
+									@endguest
+									@auth("web")
+										<a class="btn btn-success btn-sm rounded-3 px-2" href="{{route('dashboard')}}"><i class="fa fa-user-alt mx-1"></i>Mon Compte</a>
+									@endauth
                         </div>
                     </div>
                 </div>

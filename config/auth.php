@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+		 'admin'=>[
+		 	'driver'=>"session",
+			 "provider"=>"admin"
+		 ],
+		 "superAdmin"=>[
+		 	"driver"=>"session",
+			 "provider"=>"superAdmin"
+		 ]
     ],
 
     /*
@@ -63,7 +71,15 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],
+        	],
+		 "admin"=>[
+		 	"driver"=>"eloquent",
+			 "model"=>App\Models\Administrateur::class
+		 ],
+		 "superAdmin"=>[
+		 	"driver"=>"eloquent",
+			 "model"=>App\Models\SuperAdministrateur::class
+		 ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,6 +109,19 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+		 "admin"=>[
+		 	"provider"=>"admin",
+			 'table'=>"admin_password_resets",
+			 'expire'=>60,
+			 'throttle'=>10
+		 ],
+		 "superAdmin"=>[
+			 "provider"=>"superAdmin",
+			 'table'=>"superadmin_password_resets",
+			 'expire'=>60,
+			 'throttle'=>60
+		 ]
+
     ],
 
     /*

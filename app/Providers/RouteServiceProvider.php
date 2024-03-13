@@ -20,6 +20,19 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/';
 
     /**
+     * The path to the "home" route for super administrator domain
+	  * this is used by laravel authentication to redirect super admin users after login
+	  *
+	  * @var string
+	  */
+    public const SUPER_ADMIN_HOME="/";
+
+	/**
+	 * the path to the "home" route for administrateur domain
+	 */
+    public const ADMIN_HOME = "/";
+
+	/**
      * The controller namespace for the application.
      *
      * When present, controller route declarations will automatically be prefixed with this namespace.
@@ -38,16 +51,31 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+
+            // routes pour mes api
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            // routes pour mon domaine administrateurs
+            Route::domain(adminUrl())
+                ->middleware(["web"])
                 ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
+                ->group(base_path("routes/admin/administrateur.php"));
+            //route pour le domaines des supers administrateurs
+            Route::domain(superAdminUrl())
+                ->middleware(["web"])
+                ->namespace($this->namespace)
+                ->group(base_path("routes/superAdmin/superadministrateur.php"));
 
-           
+            //route pour les utilisateurs courants
+            Route::middleware(["web"])
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web/web.php'));
+
+
+
         });
     }
 

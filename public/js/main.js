@@ -1,6 +1,7 @@
 (function ($) {
     "use strict";
 
+    //j'initialise mes tolltip
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -10,8 +11,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,14 +25,14 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
-    
-    
+
+
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -52,8 +53,8 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -90,7 +91,13 @@
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
         })
+
     });
+
+    //code pour l'activations des tooltips
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
 
 
     // Testimonials carousel
@@ -114,6 +121,6 @@
             }
         }
     });
-    
+
 })(jQuery);
 

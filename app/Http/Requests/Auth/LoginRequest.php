@@ -2,15 +2,19 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\DataObject\UserDTO;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Spatie\DataTransferObject\Exceptions\UnknownProperties;
+use Spatie\LaravelData\WithData;
 
 class LoginRequest extends FormRequest
 {
+	use WithData;
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -34,18 +38,19 @@ class LoginRequest extends FormRequest
         ];
     }
 
-    /**
-     * Attempt to authenticate the request's credentials.
-     *
-     * @return void
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
+	/**
+	 * Attempt to authenticate the request's credentials.
+	 *
+	 * @return void
+	 *
+	 * @throws ValidationException
+	 */
     public function authenticate()
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        $userDto = UserDTO::from($this);
+        if (! Auth::attempt(['email'=>$userDto->email,"password"=>$userDto->password], $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -61,7 +66,7 @@ class LoginRequest extends FormRequest
      *
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function ensureIsNotRateLimited()
     {

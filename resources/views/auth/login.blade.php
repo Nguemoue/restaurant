@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
+	<x-auth-card :bg="asset('img/background/bg1.jpg')" class="shadow">
+		<x-slot name="logo">
+            <a href="/" class="shadow shadow-lg">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
@@ -58,4 +58,5 @@
             </div>
         </form>
     </x-auth-card>
+
 </x-guest-layout>

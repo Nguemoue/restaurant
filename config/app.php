@@ -123,6 +123,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -176,7 +177,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\TraitementServiceProvider::class,
-        Barryvdh\Elfinder\ElfinderServiceProvider::class
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
+        App\Providers\UrlServiceProvider::class
     ],
 
     /*
@@ -233,5 +235,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+	'roles'=>[
+		'client'=>"Client",
+		"admin"=>"Admin",
+		"super_admin"=>"Super Administrateur",
+		"user"=>"utilsiateur"
+	]
 
 ];

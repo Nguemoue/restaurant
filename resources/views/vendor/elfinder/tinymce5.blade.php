@@ -24,7 +24,7 @@
     <!-- elFinder initialization (REQUIRED) -->
     <script type="text/javascript">
         var FileBrowserDialogue = {
-            init: function() {
+			  init: function() {
                 // Here goes your code for setting your custom things onLoad.
             },
             mySubmit: function (file) {

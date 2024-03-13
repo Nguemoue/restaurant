@@ -747,5 +747,14 @@
     "Zambia": "Zambie",
     "Zimbabwe": "Zimbabwe",
     "Zip / Postal Code": "Code postal",
-    "Åland Islands": "Les îles d'Åland"
+	 "Åland Islands": "Les îles d'Åland",
+	"home": "Acceuil",
+	"contact": "Contactez nous",
+	"team": "Notre Equipe",
+	"service": "nos service",
+	"menu":"nos menus",
+	"booking": "Réservation",
+	"about": "A Propos",
+	"testimonial": "Témoignages"
+
 }
